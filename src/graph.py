@@ -95,7 +95,9 @@ Question:
                 if isinstance(item, dict)
             )
 
-        if state["context"]:
+        if "I cannot answer based on the provided document." in answer:
+            confidence = 0.0
+        elif state["context"]:
             confidence = 0.95
         else:
             confidence = 0.0
